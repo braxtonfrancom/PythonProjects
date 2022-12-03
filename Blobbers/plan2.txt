@@ -1,0 +1,90 @@
+# Braxton Francom
+# CS1400 - LW2
+# Assignment 9
+
+blobber.py design plan
+
+1. Requirements Specification
+    Take correct input from user and apply it accurately to blobber
+    Display correct happiness levels
+
+2. System Analysis
+    Volume of a cylinder: pi * r^2 * h
+    % of blobber remaining = currentVolume - ((# of seconds passed * .002) * originalVolume)
+
+3. System Design
+    1. Import time and math
+    2. Create class Blobber()
+        3. Create initializer with parameters (self, name, color, radius, height)
+            - create private float data self.__radius
+            - create private float date self.__height
+            - create private string data self.__color and make it lowercase
+            - create private string data self.__name and capitalize the first letter
+            - create self.__baseTime = time()
+            - define self.__originalVolume = ((self.__radius ** 2) * pi * self.__height)
+            - define self.__currentVolume = self.__originalVolume
+            - define self.originalRadius = radius
+            - define self.currentRadius = self.originalRadius
+            - define self.__isAlive = True
+        4. Create getter for name
+            - return self.__name
+        5. Create getter for color
+            - return self.__color
+        6. Create setter for name with additional parameter newName and capitalize the newName
+            - self.__name = newName.capitalize()
+        7. Create setter for color with additional parameter newColor and make the newColor lowercase
+            -self.__color = newColor.lower()
+        8. Define feedBlobber with additional parameter of food
+            - self.__currentRadius = self.__currentRadius + food
+            - calculate the new current volume by doing pi * radius ** 2 * height
+            - return the current volume divided by the original volume
+        9. Define blobberSpeak
+            - create variable for vitals as the current radius divided by the original radius
+            - return "My name is " + self.getName() + ", and I am " + self.getColor() + "." + "\n" + "My current happiness level is " + format(vitals, ".2%")
+        10. Define vitalsOK
+            - self.__currentRadius is equal to the current radius - (# of seconds passed times .002) times the original radius
+            - set self.__baseTime equal to time()
+            - create the variable vitals and set it equal to the current volume / original volume
+                - Create as if statement with an or to determine if the blobber is within 10% of it's original size
+                - If false set self.__isALive equal to False
+            - return vitals and self.isAlive
+
+
+UML
+        **********************************
+        Blobber
+        **********************************
+        - radius: float
+        - height: float
+        - color: str
+        - name: str
+        - baseTime: int
+        - originalVolume: int
+        - currentVolume: int
+        - isAlive: bool
+        **********************************
+        Blobber()
+        getName(): str
+        getColor(): str
+        setName(newName, str): str
+        setColor(newColor, str): str
+        feedBlobber(food, int): float
+        blobberSpeak(): str/float
+        vitalsOK(): bool
+        **********************************
+
+
+4. Testing
+
+    Test 1- Blobber Speak
+            Input: Name: rob
+                   Color: red
+                   Radius: 50
+                   Height: 60
+            Expected Output: My name is Rob and I am red.
+            Test Result: Passed
+
+    Test 2- Change Name
+            Input: Changed the name to TOM
+            Expected Output: Your Blobber's name is Tom
+            Test Result: Passed

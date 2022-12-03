@@ -1,0 +1,96 @@
+# Braxton Francom
+# CS1400 - LW2
+# Assignment 11
+
+
+Orbian Class design plan
+
+1. Requirements Specification
+    Accurately return the correct selection made by the user.
+
+2. System Analysis
+    None
+
+3. System Design
+    1. Create Orbian class
+        2. Create the constructor with correct parameters(already done)
+            3. Put in correct constants(already done)
+            4. Put in variables(already done)
+        5. Create __getHeadVolume method(already done)
+        6. Create __getBodyVolume method(already done)
+        7. Create __ageCheck method(already done)
+        8. Create getName method
+            -return self.__NAME
+        9. Create __getHeadRadius method
+            Use an if statement to determine if the orbian is an adult
+                -return headradius * 2 if they are an adult
+
+       10. Create __getBodyRadius method
+            Use an if statement to determine if the orbian is an adult
+                -return bodyRadius * 2 if they are an adult
+
+       11. Create __getBodyHeight method
+            Use an if statement to determine if the orbian is an adult
+                -return bodyHeight * 4 if they are an adult
+
+       12. Create getVolume method
+            Calculate the integer of getBodyVolume + getHeadVolume
+
+       13. Create getAge method
+            return  an integer value of the currenttime - the start time
+
+       14. Overload the __gt__ dunder
+            - Use an if-else statement to compare volume that returns booleans
+        5. Overload the __eq__ dunder
+            - Use an if-else statement to compare volume that returns booleans
+        6. Overload the __len__ dunder
+            - Return the bodyHeight + (headRadius * 2)
+        7. Overload the __add__ dunder
+            -Create a new list and set it to a variable
+            -Create a variable for length
+            -shuffle the newList
+            -Set a variable for newName
+                -join the new list and capitalize the final word. also splice it to half of the variable 'length'
+            -Set a variable for newHeadRadius and divide it by 4
+            -Set a variable for newBodyRadius and divide it by 4
+            -Set a variable for newHeight and divide it by 8
+            -Return Orbian(newName, newHeadRadius, newBodyRadius, newHeight)
+
+
+
+UML
+        **********************************
+        Orbian
+        **********************************
+        - orbian: str
+        **********************************
+        __getHeadVolume(self): float
+        __getBodyVolume(self): float
+        __ageCheck(self): bool
+        __getName(self): str
+        __getHeadRadius(self): float
+        __getBodyRadius(self): float
+        __getBodyHeight(self): float
+        getVolume(self): int
+        getAge(self): int
+        __gt__(self, other): bool
+        __eq__(self, other):  bool
+        __len__(self): float
+        __add__(self, other): str
+        **********************************
+
+
+4. Testing
+
+    Test 1-
+            Input: Meet Orbian Family
+            Expected Output: I am Orbian g
+                             I am Orbian f
+                             I am Orbian t
+                             I am Orbian r
+            Test Result: Passed
+
+    Test 2-
+            Input: Orbian Thanos
+            Expected Output: Randomly removes two of the four Orbians
+            Test Result: Passed

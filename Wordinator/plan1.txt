@@ -1,0 +1,97 @@
+# Braxton Francom
+# CS1400 - LW2
+# Assignment 10
+
+Wordinator design plan
+
+1. Requirements Specification
+    When input is given for the two words and the user selects a number, correctly return what the user expects to happen.
+
+2. System Analysis
+    None
+
+3. System Design
+    1. Create Wordinator class
+    2. Create __init__ constructor
+        -Create private variable self.__word
+    3. Create getWord getter
+        -return self.__word
+    4. Create a method that will overload __lt__
+        -Use if-elif statements to alphabetize the word1 and word2
+            -Return True/False
+    5. def __str__ method to return self.__word
+    6. Create a method that will overload __add__
+        -Add other.getWord() to self.__word and capitalize the combined word
+    7. Create a method that will overload __mul__
+        -return self.__word multiplied by factor and make it all uppercase
+    8. Create a method that will overload __truediv__
+        -Create a length variable set to the length of self.__word
+        -Create an empty string to 'build'
+        -Use a for i in range statement for the range of the length of self.__word
+            -Add onto the empty string one letter at a time(from self.__word and other.getWord())
+        -Create an if-elif statement to ensure that if one word is longer than the other, it will print the remaining letters at the end of the word
+        -return the new string and capitalize it
+    9. Create a method that will overload __mod__
+        -create a variable that is set to a list with self.__word and other.getWord()
+        -create a second variable set to an empty list
+        -create a for loop for the list of the first variable
+            -in the for loop create a new variable(trimLength) set to the (length of the word +2) // 4)
+            -append the empty list variable with the word indexed as such[trimLength:len(word)-trimLength]
+        -return the variable[0] and variable[1]
+    10. Create a method that will overload __sub__
+        -Create a new variable newStr set to an empty list
+        -Create a new variable words set to the list composed of self.__word and other.getWord()
+            -Create a for loop for word in words
+            -Create a new empty variable in the for loop
+                -Create a for loop for char in words
+                    -Create an if-elif statement
+                        -set value to the ord(char)
+                        -value += 32
+                        -increment variable by += chr(value)
+                -Append the newly created string onto the newStr
+            -return the newStr[0] and newStr[1]
+    11. Create a method for backWordSlice
+        -return self.__word with indexed as such [::-1]
+    12. Create a backWordManual method
+        -Create an empty string
+        -Create a length variable set to the length of self.__word
+        -Use a for loop [i] with the range of the length of ((self.__word)-1,-1,-1)
+            -Increment onto the string += self.__word[i]
+        -return the string
+
+
+UML
+        **********************************
+        Wordinator
+        **********************************
+        - word: str
+        **********************************
+        getWord(): str
+        __str__: str
+        __lt__(self, other): bool
+        __add__(self, other): str
+        __mul__(self, factor): str
+        __truediv__(self, other): bool
+        __mod__(self, other): str
+        __sub__(self, other): str
+        backWordSlice(): str
+        backWordManual(): str
+        **********************************
+
+
+4. Testing
+
+    Test 1- firstWord
+            Input: word1 = Braxton
+                   word2 = Francom
+                   select--> 1 (First Word)
+            Expected Output: Braxton
+            Test Result: Passed
+
+    Test 2- Back Words Sliced
+            Input: word1 = orange
+                   word2 = GRAPE
+                   select--> 7 (Back Words Sliced)
+            Expected Output: egnaro
+                             EPARG
+            Test Result: Passed

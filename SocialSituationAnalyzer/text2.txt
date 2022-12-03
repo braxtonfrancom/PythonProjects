@@ -1,0 +1,55 @@
+1. Requirements Specification
+    Displays "Welcome to the Social Situation Analyzer System"
+    Displays "Person One"
+    Gets input from Person one
+        -Name
+        -Position(x, y)
+        -Personal Space Radius
+    Displays "Person Two"
+    Gets input from Person two
+        -Name
+        -Position(x, y)
+        -Personal Space Radius
+    Displays "Social Situation Analysis Results"
+    Displays results of Person Test
+    Displays results of Space Test
+
+
+2. System Analysis
+    Distance = math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2)
+    Will need to use two if-else-if statements
+
+3. System Design
+    Displays "Welcome to the Social Situation Analyzer System"
+    Displays "Person One"
+    Get input from Person one
+        -Name
+        -Position(x, y)
+        -Personal Space Radius
+    Displays "Person Two"
+    Get input from Person two
+        -Name
+        -Position(x, y)
+        -Personal Space Radius
+    Calculate the distance between the two points.
+    Use an if-else-if statement to conduct person test
+    Use an if-else-if statement to conduct space test
+
+    Displays "Social Situation Analysis Results"
+    Displays results of Person Test
+    Displays results of Space Test
+
+4. Testing
+    Test 1-
+        Input: p1 = (0, 0), 3
+               p2 = (100, 100), 10
+        Expected Output: Person Test: Neither p1 nor p2 is in the other's personal space
+	                     Space Test: p1 and p2's spaces do not overlap
+        Test Result: Passed
+
+    Test 2-
+        Input: p1 = (0, 0), 100
+               p2 = (1, 5), 15
+        Expected Output: Person Test: p1 and p2 are in each other's personal space
+	                     Space Test: p2's personal space is entirely inside p1's personal space
+        Test Result: Passed

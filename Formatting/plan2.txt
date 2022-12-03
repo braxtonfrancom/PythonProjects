@@ -1,0 +1,55 @@
+1. Requirements specification
+
+    Get input for employee name
+    Get input for number of hours worked in one week
+    Get input for hourly pay rate
+    Get input for federal tax withheld
+    Get input for state tax withheld
+    Display <User name> PAY INFORMATION
+    Display inputed values and calculated values.
+    Lastly, display net pay
+
+
+2. System Analysis
+
+    gross pay = hours worked * pay rate
+    Federal withholding = <Federal % withheld> * gross pay
+    State withholding = <State % withheld> * gross pay
+    Total deduction = Federal withholding + State withholding
+    net pay = gross pay - total deduction
+
+3. System Design
+
+    Prompt user for employee name
+    Prompt user for number of hours worked in a week
+    Prompt user for hourly pay rate
+    Prompt user for federal tax withholding rate
+    Prompt user for state tax withholding rate
+    Display <userName> PAY INFORMATION
+    Calculate Gross pay
+    Calculate the Federal withholding
+    Calculate the State withholding
+    Add Federal and State withholdings to find the total deduction
+    Subtract total deduction from gross pay to find net pay
+
+
+4. Testing
+    Test 1:
+        Input:  Chad Mano
+                40 hours a week
+                $12.75 pay rate
+                .11 federal tax withholding rate
+                .07 state tax withholding rate
+        Expected Output: Net pay = $418.20
+        Test Result: Passed
+
+
+
+    Test 2:
+        Input:  Braxton Francom
+                20 hours a week
+                $11.00 pay rate
+                .12 federal tax withholding
+                .08 state tax withholding
+        Expected Output: Net pay = $176.00
+        Test Result: Passed

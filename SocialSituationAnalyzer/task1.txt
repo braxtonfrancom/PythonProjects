@@ -1,0 +1,46 @@
+1. Requirements Specification
+    Displays <Welcome to the Guessing Game>
+    Get input from user for a random number from 1-10
+    The computer will generate a random  number from 1-10
+    Displays the number the user picked and the number the computer generated
+    Depending on how close the user's guess was, it will display a different message
+
+2. System Analysis
+    random.randomint()
+    Need to use an if-else-if statement
+
+3. System Design
+    Display <Welcome to the guessing game>
+    Displays <The computer has picked a number from 1-10. Try to match it.>
+    Prompt user to input a number from 1-10
+    Use a random number generator to generate a number from 1-10
+    Use an if-else-if statement to determine what message to display
+    Display the number the computer selects along with the users selection.
+    Display appropriate message according to how close the users input was to the computer generated number.
+
+
+4. Testing
+    Test 1-
+        Input: 5
+
+        Expected Output:
+               If exact: Honored to play with you, Master.
+               If off by one: You are a worthy opponent, Knight.
+               If off by two: You have much to learn, Padawan.
+               If off by three: Youngling, your time will come.
+               If off by 3+: Keep working hard in the Service Corps.
+
+        Test Result: I selected 5 and the computer selected 7. My guess was off by 2. It printed "You have much to learn, Padawan." Success.
+
+
+    Test 2-
+        Input: 9
+
+        Expected Output:
+               If exact: Honored to play with you, Master.
+               If off by one: You are a worthy opponent, Knight.
+               If off by two: You have much to learn, Padawan.
+               If off by three: Youngling, your time will come.
+               If off by 3+: Keep working hard in the Service Corps.
+
+        Test Result: I selected 9 and the computer selected 3. My guess was off by 6. It printed "Keep working hard in the Service Corps." Success.

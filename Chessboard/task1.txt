@@ -1,0 +1,18 @@
+# Braxton Francom
+# CS1400 - LW2
+# Assignment 7
+
+System Design of makeNumberPyramid() function
+
+    1) Create formal parameter to get the number of rows from caller of the function
+    2) Set a variable --> x = num
+    3) Set count = 0
+    4) Use a for loop(i) with the range(0, num)
+    5) Add one to the count
+        6) Use a for loop(j) with range(0, x)
+            7) Print statement (with end= " ") at the end
+        8) Adjust spacing (num-1)
+        9) Use a final for loop with a range(0, i + 1)
+            10) Print statement(count, AND end= " ")
+            11) Print a new row
+            12) Return the pyramid string to the caller of the new function

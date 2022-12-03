@@ -1,0 +1,29 @@
+1. Requirements Specification
+        The computer simulates the elephant one, elephant two, and zookeeper's pen choice 100,000 times
+        Displays what percentage of the time there is at least one elephant in the pen the zookeeper checks(Using 2% points as the margin of error)
+        Also displays when there is an elephant in the pen, what percentage of the time both elephants are in the same pen(Using 2% points as the margin of error)
+        Then display's if the zookeeper or custodian is correct.
+        Prompt user to see if they want to run the simulation again
+        Runs again or stops the program accordingly
+
+
+2. System Analysis
+        percent of one elephant = ((# of times there is one elephant/ 100000) * 100)
+        percent of both elephants = ((# of times there are both elephants/ 100000) * 100)
+
+3. System Design
+        import random module
+        Define two variables ("atLeastOne" and "both")
+        Use a for loop to run through 100000 iterations
+            checking:
+                    Elephant one's pen selection
+                    Elephant two's pen selection
+                    Zookeeper's pen selection
+        When the pen selections are the same, add to the variables count
+            zookeeper == elephantOne
+            zookeeper == elephantTwo
+            zookeeper == elephantOne and zookeeper == elephantTwo
+        Calculate percent of times that the zookeeper finds one elephant and display
+        Calculate percent ot times that the zookeeper finds both elephants and display
+        Determine if zookeeper or custodian was correct and display
+        Prompt user to see if they would like to run the program again

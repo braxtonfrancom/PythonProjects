@@ -1,0 +1,120 @@
+# Braxton Francom
+# CS1400 - LW2
+# Assignment 8
+
+1. Requirements Specification
+    Prompt user to choose a mode
+    Take input from user for each mode
+        Rectangle Pattern:
+            Center Point
+            Offset
+            Height
+            Width
+            Count
+            Rotation
+        Circle Pattern:
+            Center Point
+            Offset
+            Radius
+            Count
+        Super Pattern:
+            Number
+    Draw user's input correctly
+    Prompt user if they want to play again
+        If user does not want to play again, print "Thanks for playing!" and end program
+        If user wants to play again:
+            Prompt user if they want to keep drawings or clear drawings
+
+2. System Analysis
+    rotation = 360 / count
+
+
+3. System Design
+    In pattern.py:
+        1) import turtle
+
+        2) define drawRectangle
+            go to centerX, centerY
+            go forward offset
+            call setRandomColor function
+            set heading to rotation
+            go forward width
+            set heading to rotation + 90
+            go forward height
+            set heading to rotation + 180
+            go forward width
+            set heading to rotation + 270
+            go forward height
+
+        3) define drawRectanglePattern
+            Use a for loop with range of 0, count
+            rotation += 360 / count
+            call drawRectangle function
+            set heading to (360 / count)
+
+        4) define drawCirclePattern
+            set rotation = 0
+            Use a for loop with a range of (0, count)
+            rotation += 360 / count
+            go to center point
+            go forward offset
+            go right 90 degrees
+            call setRandomColor function
+            draw circle(radius)
+            go to center point
+            set heading to rotation
+
+        5) define setRandomColor
+            a = random.randint(0,4)
+            use if and elif statments to set a color to each number
+                Colors to use:
+                    blue, red, orange, green
+
+        6) define setup
+            set turtle speed to 0
+            set screen dimensions to 1000 x 800
+
+        7) define reset
+            reset turtle
+            reset speed to 0
+            hide turtle
+
+        8) define drawSuperPattern
+            use a for loop with range(0, num)
+            set bounds for variables
+                centerX
+                centerY
+                offset
+                width
+                height
+                count
+                rotation
+                radius
+                a = random.randint(0,2)
+                if statement--> for when a == 1
+                    call drawRectanglePattern function
+                else statement-->
+                    call drawCirclePattern
+        9) define done
+            turtle.done()
+
+        10) insert appropriate import statements into task1.py
+
+        11) Use if/elif statements to determine if screen is cleared/not cleared and if the statement "Thanks for playing!" is printed.
+
+4. Testing
+
+    Test 1-
+            Input: 2) Circle Pattern
+                    Center point: 0,0
+                    Offset: 50
+                    Radius: 20
+                    Count: 20
+            Expected Output: I expect it to draw a circle centered at 0,0 with the correct dimensions and random colors.
+            Test Result: Passed
+
+    Test 2-
+            Input: 3) Super Pattern
+                      Number: 6
+            Expected Output: 6 random shape patterns(rectangle or circle) should be drawn with random colors.
+            Test Result: Passed

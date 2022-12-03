@@ -1,0 +1,33 @@
+1. Requirements Specification
+    get input for length of sides
+    get input for number of sides
+    display the area of the polygon
+
+2. System Analysis
+    Area = (n*s^2)/(4*tan(pi/n))
+
+3. System Design
+    Import math module
+    Prompt user for length of sides
+    Prompt user for number of sides
+    Calculate area of polygon
+    Display the area of the polygon to the user
+
+
+4. Testing
+    Test 1-
+        Input: length of sides: 10
+               number of sides: 6
+        Expected Output: 259.80762
+        Test Result: Passed
+
+    Test 2-
+        Input: length of sides: 25
+               number of sides: 5
+        Expected Output: 1075.29838
+        Test Result: Passed
+
+
+
+
+

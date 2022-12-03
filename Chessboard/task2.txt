@@ -1,0 +1,48 @@
+# Braxton Francom
+# CS1400 - LW2
+# Assignment 7
+
+1. Requirements Specification
+    Get input from user for starting x and y coordinate and height/width of chessboard
+    Display a chessboard with appropriate dimensions
+
+2. System Analysis
+    The width of one space will be 1/8 of the width of the chessboard
+    The height of one space will be 1/8 of the height of the chessboard
+
+3. System Design
+    1) Import drawChessboard from chessboard
+    2) Create main function
+        Get input from user for starting location, chessboard height and width
+        Call drawChessboard
+
+            3) Define drawChessboard
+                import turtle
+                Draw a rectangle that has the width and the height the user inputed
+                Call drawAllRectangles
+
+                    4) Define drawAllRectangles
+                        Use nested for loops to draw all rectangles (range(0, 4))
+                        Call drawRectangle
+                        Do two sets of for loops.
+                            -The first set will draw every other row of rectangles
+                            -The second set will draw the rest of the rows (by starting at the currentX += width/4
+
+                            5) Define drawRectangle
+                                Draw a rectangle by going to the startX, startY position and then drawing the inputed height and width with appropriate orientation of turtle
+
+4. Testing
+
+    Test 1-
+            Input: X, Y coordinates: 20, 20
+                   width: 200
+                   height: 200
+            Expected Output: Draws a chessboard starting at 20, 20 that has the dimensions of width = 200, height = 200
+            Test Result: Passed
+
+    Test 2-
+            Input: X, Y coordinates: 0, 0
+                   width: 100
+                   height: 80
+            Expected Output: Draws a chessboard starting at 0, 0 that has the dimensions of width = 100, height = 80
+            Test Result: Passed

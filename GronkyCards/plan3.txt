@@ -1,0 +1,35 @@
+# Braxton Francom
+# CS1400 - LW2
+# Assignment 12
+
+Software design plan for search and sort functions
+
+1. Requirements Specification
+    Accurately return the correct selection made by the user.
+
+2. System Analysis
+    None
+
+3. System Design
+    1. Software design for search and sort functions (3 total)
+
+    sortTitle()
+        -Use Insertion Sort
+
+    sortGang()
+        -Use Bubble Sort
+
+    searchCard()
+        -Use Binary Search
+
+4. Testing
+
+    Test 1-
+            Input:
+            Expected Output:
+            Test Result: Passed
+
+    Test 2-
+            Input:
+            Expected Output:
+            Test Result: Passed
